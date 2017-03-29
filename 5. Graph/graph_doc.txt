@@ -1,0 +1,27 @@
+Graph is set of objects connected by link.
+The objects are called Vertices (V) and the link which connects these objects are called edges (E).
+The graph is represented as (V, E).
+
+a 0------0 b
+  |      |
+  |      |
+  |      |
+c 0------0------0
+         d      e
+
+Where V = {a,b,c,d,e}
+      E = {ab, ac, bd, cd, de}
+
+A graph can be represented as array of vertices and 2-D array of edges.
+
+Adjacency - Two nodes or vertices are adjacent if they are connected to each other through an edge.
+Path - Path represents a sequence of edges between 2 vertices.
+
+Basic graph operations are
+1. Add vertex to graph.
+2. Add an edge between 2 vertices.
+3. Display a vertex of graph.
+
+DFS - uses stack. In this only one i.e. the first found adjacent node is pushed to the stack.
+
+BFS - uses queue. In BFS all unvisited node adjacent to current node are enqueued.

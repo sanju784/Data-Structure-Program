@@ -1,0 +1,26 @@
+
+
+
+
+// this is my self solution, here i am entering the nodes in a queue level wise and when 1 level is over i am inserting -1 into the queue
+// so that when traversing a level is finished it can be identified by -1.
+// geeksforgeek has a different solution http://www.geeksforgeeks.org/iterative-method-to-find-height-of-binary-tree/
+int findHeightIterative(node *root) {
+  node *temp;
+  int h = 0;
+  enqueue(Q1, root);
+  enqueue(Q1, -1);
+  while (!isEmpty(Q1)) {
+    temp = pop(Q1);
+	if(temp == -1){
+	  int h++;
+	  enqueue(Q1, -1);
+	} else {
+	  if(temp->left)
+	    enqueue(Q1, temp->left);
+	  if(temp->right)
+	    enqueue(Q1, temp->right);
+	}
+  }
+  return h;
+}

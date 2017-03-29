@@ -1,0 +1,92 @@
+void iterativePreOrder(node *root) {
+  stack S;
+  if(root == NULL)
+    return;
+  push(S, root)
+  while(!isEmpty(S)) {
+    temp = pop(S);
+	printf("  %d", temp->data);
+	if(temp->right)
+	  push(S, temp->right);
+	if(temp->left)
+	  push(S, temp->left);
+  }
+  delete(S);
+}
+
+void iterativeInOrder(node *root) {
+  stack S;
+  if(root == NULL)
+    return;
+  push(S, root);
+  while(!isEmpty(S)) {
+    while(root->left) {
+	  root = root->left;
+	  push(S, root);
+    }
+    temp = pop(S);
+    printf("  %d", temp->data);
+    if(temp->right) {
+      root = temp->right;
+	  push(S, root)
+	}
+  }
+  delete(S);
+}
+
+//using 2 Stack
+void iterativePostOrder2(node *root) {
+  stack S1, S2;
+  push(s1, root);
+  while (!isEmpty(S1)) {
+    temp = pop(S1);
+	push(S2, temp->data);
+	if(temp->left)
+	  push(S1, temp->left);
+	if(temp->right)
+	  push(S1, temp->right);
+  }
+  while(!isEmpty(S2){
+    printf("  %d", pop(S2));
+  }
+  delete(S1);
+  delete(S2);
+}
+
+//using 1 stack
+void iterativePostOrder1(node *root) {
+  stack S;
+  do {
+    while(root) {
+	  if (root->right)
+        push(S, root->right);
+	  push(S, root);
+	  root = root->left;
+    }
+	root = pop(S);
+	if (root->right && S[top] == root->right)
+	{
+	  pop(S);
+	  push(S, root);
+	  root = root->right;
+	} else {
+	  printf("  %d", root->data);
+	  root = NULL;
+	}
+  } while (!isEmpty(S));
+  delete(S);
+}
+
+void iteraveLevelOrder(node *root) {
+  Queue Q;
+  push(Q, root);
+  while(!isEmpty(Q)) {
+    temp = pop(Q);
+	printf("  %d", temp->data);
+	if(temp->left)
+	  push(Q, temp->left);
+	if(temp->right)
+	  push(Q, temp->right);
+  }
+  delete(Q);
+}

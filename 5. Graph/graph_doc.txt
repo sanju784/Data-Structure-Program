@@ -25,3 +25,12 @@ Basic graph operations are
 DFS - uses stack. In this only one i.e. the first found adjacent node is pushed to the stack.
 
 BFS - uses queue. In BFS all unvisited node adjacent to current node are enqueued.
+
+Graphp Alogrithms -
+1. DFS and BFS - to traverse a graph or search in a graph.
+
+2. Topological Sort - Arrangement of vertices of a directed graph in the order they appear
+
+3. Shortest Path Algorithm - Dijkstra, Bellman-Form Algorithm
+
+4. Minimum Spanning tree - Prim's, Kruskal's Alogirthm

@@ -14,18 +14,13 @@ int queue_count = 0;
 void enqueue(int data) {
   if (rear == -1) {
     front++;
-	rear++;
+    rear++;
   } else {
     rear++;
   }
   queue[rear] = data;
   queue_count++;
 }
-
-/*void enqueue(int data) {
-  queue[++rear] = data;
-  queue_count++;
-}*/
 
 int dequeue() {
   queue_count--;
@@ -38,11 +33,6 @@ int dequeue() {
   }
   return data;
 }
-
-/*int dequeue() {
-  queue_count--;
-  return queue[front++];
-}*/
 
 bool isQEmpty() {
   return queue_count == 0;

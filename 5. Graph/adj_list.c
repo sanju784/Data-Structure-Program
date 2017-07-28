@@ -20,11 +20,11 @@ struct adjList {
 struct graph {
 	int v;
 	struct adjList *array;
-}
+};
 
 // function to create new adjacency(link) list node
 struct adjListNode* newAdjListNode(int dest) {
-	struct adjListNode *newNode = (struct adjListNode*)maloc(sizeof(struct adjListNode));
+	struct adjListNode *newNode = (struct adjListNode*)malloc(sizeof(struct adjListNode));
 	newNode->dest = dest;
 	newNode->next = NULL;
 	return newNode;
@@ -32,15 +32,15 @@ struct adjListNode* newAdjListNode(int dest) {
 
 // function to create graph of v vertices
 struct graph* createGraph(int v) {
-	struct graph* g = (stuct graph*)malloc(sizeof(struct graph));
+	struct graph* g = (struct graph*)malloc(sizeof(struct graph));
 	g->v = v;
 	// array of header of adjacency list of size v
 	g->array = (struct adjList*)malloc(v*sizeof(struct adjList));
 	int i;
 	// initializing the header of adjacency list with null
 	for(i = 0; i < v; i++)
-		g->array[i] = NULL;
-	return graph;
+		g->array[i].head = NULL;
+	return g;
 }
 
 // add edges to undirected graph

@@ -31,10 +31,7 @@ int isFull() {
 }
 
 int isEmpty() {
-	if(q.front == -1)
-		return 1;
-	else
-		return 0;
+	return q.front == -1;
 }
 
 void enqueue () {
@@ -49,7 +46,7 @@ void enqueue () {
 		q.data = (int*)realloc(q.data, q.capacity*sizeof(int));
 		if(q.front <= q.rear) {
 		  q.rear++;
-	    } else {
+	        } else {
 		  int i = q.capacity/2 - 1;
 		  int j = q.capacity - 1;
 		  while(i >= q.front) {
@@ -58,7 +55,7 @@ void enqueue () {
 			j--;
 		  }
 		q.rear++;
-	  }
+	      }
 	} else {
 	  q.rear++;
 	}
@@ -81,7 +78,7 @@ void dequeue() {
 
 void display() {
 	if(isEmpty()) {
-		printf("\nThe queue is empty\n");
+	    printf("\nThe queue is empty\n");
 	    return;
 	}
 	printf("\nThe queue values are\n");
@@ -90,7 +87,7 @@ void display() {
 	  printf("  %d", q.data[i]);
 	  if(i == q.rear)
 	  	break;
-      if(i == q.capacity)
+          if(i == q.capacity)
 		i = 0;
 	  else
 		i++;

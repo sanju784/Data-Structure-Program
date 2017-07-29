@@ -29,7 +29,7 @@ BFS - uses queue. In BFS all unvisited node adjacent to current node are enqueue
 Graphp Alogrithms -
 1. DFS and BFS - to traverse a graph or search in a graph.
 
-2. Topological Sort - Arrangement of vertices of a directed graph in the order they appear
+2. Topological Sort - It is only for DAG, it is linear ordering of vertices such that for directed edge uv, u comes before v in ordering
 
 3. Shortest Path Algorithm - Dijkstra, Bellman-Form Algorithm
 

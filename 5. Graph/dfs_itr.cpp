@@ -22,17 +22,18 @@ void dfs(int s) {
     visited[i] = false;
   stack<int> stk;
   stk.push(s);
+  visited[s] = true;
+  list<int>::iterator i;
   while(!stk.empty()) {
     s = stk.top();
     stk.pop();
-    if(!visited[s]) {
-        cout<<s<<" ";
-        visited[s] = true;
-    }
-    list<int>::iterator i;
+    cout<<s<<" ";
     for(i=adj[s].begin(); i != adj[s].end(); i++)
         if(!visited[*i])
+        {
           stk.push(*i);
+          visited[*i] = true;
+        }
   }
 }
 
